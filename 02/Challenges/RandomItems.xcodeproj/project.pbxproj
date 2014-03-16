@@ -11,6 +11,7 @@
 		494BCAB718D6202A00D0F4F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 494BCAB618D6202A00D0F4F9 /* main.m */; };
 		494BCABB18D6202A00D0F4F9 /* RandomItems.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 494BCABA18D6202A00D0F4F9 /* RandomItems.1 */; };
 		494BCAC318D620C500D0F4F9 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 494BCAC218D620C500D0F4F9 /* BNRItem.m */; };
+		494BCAC618D665BD00D0F4F9 /* BNRContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 494BCAC518D665BD00D0F4F9 /* BNRContainer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		494BCABA18D6202A00D0F4F9 /* RandomItems.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = RandomItems.1; sourceTree = "<group>"; };
 		494BCAC118D620C500D0F4F9 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
 		494BCAC218D620C500D0F4F9 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
+		494BCAC418D665BD00D0F4F9 /* BNRContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRContainer.h; sourceTree = "<group>"; };
+		494BCAC518D665BD00D0F4F9 /* BNRContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRContainer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,8 @@
 			children = (
 				494BCAC118D620C500D0F4F9 /* BNRItem.h */,
 				494BCAC218D620C500D0F4F9 /* BNRItem.m */,
+				494BCAC418D665BD00D0F4F9 /* BNRContainer.h */,
+				494BCAC518D665BD00D0F4F9 /* BNRContainer.m */,
 				494BCAB518D6202A00D0F4F9 /* RandomItems */,
 				494BCAB218D6202A00D0F4F9 /* Frameworks */,
 				494BCAB118D6202A00D0F4F9 /* Products */,
@@ -146,6 +151,7 @@
 			files = (
 				494BCAB718D6202A00D0F4F9 /* main.m in Sources */,
 				494BCAC318D620C500D0F4F9 /* BNRItem.m in Sources */,
+				494BCAC618D665BD00D0F4F9 /* BNRContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +265,7 @@
 				494BCAC018D6202A00D0F4F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

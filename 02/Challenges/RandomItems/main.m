@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BNRItem.h"
+#import "BNRContainer.h"
 
 int main(int argc, const char * argv[])
 {
@@ -22,16 +23,42 @@ int main(int argc, const char * argv[])
         }
         
         //Display the items
-        for(BNRItem *item in items){
-            NSLog(@"%@", item);
-        }
+//        for(BNRItem *item in items){
+//            NSLog(@"%@", item);
+//        }
         
         //Testing Silver Challenge initializer
-        BNRItem *it = [[BNRItem alloc] initWithName:@"The sofa" serialNumber:@"A36Y5"];
-        NSLog(@"%@", it);
+//        BNRItem *it = [[BNRItem alloc] initWithName:@"The sofa" serialNumber:@"A36Y5"];
+//        NSLog(@"%@", it);
+//        
+//        it.valueInDollars = 1234;
+//        NSLog(@"%@", it);
+
         
-        it.valueInDollars = 1234;
-        NSLog(@"%@", it);
+        
+        ///////TESTING BNRContainer class : Golden Chanllenge
+        BNRContainer *container = [[BNRContainer alloc] initWithItemName:@"Container"
+                                                          valueInDollars:233
+                                                            serialNumber:@"AABBCC"
+                                                                subitems:items];
+        
+//        NSLog(@"%@", container );
+        
+        //A container can contain another container
+        
+        //clearing items array
+        items = [[NSMutableArray alloc] init];
+
+        //Creating 5 random items
+        for (int i=0; i<5; i++) {
+            BNRItem *item = [BNRItem randomItem];
+            [items addObject:item];
+        }
+
+        [items addObject:container];
+        BNRContainer *container2 = [[BNRContainer alloc] initWithItemName:@"Container2" valueInDollars:100 serialNumber:@"C0NT23" subitems:items];
+        
+        NSLog(@"%@", container2 );
 
         //freeing items
         items = nil;
