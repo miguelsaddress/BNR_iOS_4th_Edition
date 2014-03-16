@@ -54,10 +54,7 @@
 		494BCAA718D6202A00D0F4F9 = {
 			isa = PBXGroup;
 			children = (
-				494BCAC118D620C500D0F4F9 /* BNRItem.h */,
-				494BCAC218D620C500D0F4F9 /* BNRItem.m */,
-				494BCAC418D665BD00D0F4F9 /* BNRContainer.h */,
-				494BCAC518D665BD00D0F4F9 /* BNRContainer.m */,
+				494BCAC718D66E1400D0F4F9 /* Classes */,
 				494BCAB518D6202A00D0F4F9 /* RandomItems */,
 				494BCAB218D6202A00D0F4F9 /* Frameworks */,
 				494BCAB118D6202A00D0F4F9 /* Products */,
@@ -96,6 +93,17 @@
 				494BCAB918D6202A00D0F4F9 /* RandomItems-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		494BCAC718D66E1400D0F4F9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				494BCAC118D620C500D0F4F9 /* BNRItem.h */,
+				494BCAC218D620C500D0F4F9 /* BNRItem.m */,
+				494BCAC418D665BD00D0F4F9 /* BNRContainer.h */,
+				494BCAC518D665BD00D0F4F9 /* BNRContainer.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
