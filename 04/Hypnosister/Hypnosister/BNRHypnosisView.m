@@ -35,17 +35,22 @@
     center.x = x;
     center.y = y;
     
-    // The circle will be the largest that will fit in the view
-    float radius = (MIN(bounds.size.width, bounds.size.height)/2.0);
     UIBezierPath *path = [[UIBezierPath alloc] init];
     path.lineWidth = 10;
 
-    [path addArcWithCenter:center
-                    radius:radius
-                startAngle:0.0
-                  endAngle:(2.0 * M_PI)
-                 clockwise:YES];
-    
+    // The largest circle will circumscribe the view
+    float maxRadius = hypot(bounds.size.width, bounds.size.height) / 2.0;
+    for (float radius = maxRadius; radius>0; radius = radius-20) {
+
+        [path moveToPoint:CGPointMake(center.x + radius, center.y)];
+
+        [path addArcWithCenter:center
+                        radius:radius
+                    startAngle:0.0
+                      endAngle:(2.0 * M_PI)
+                     clockwise:YES];
+
+    }
     
     UIColor *pathColor = [UIColor lightGrayColor];
     [pathColor setStroke];
