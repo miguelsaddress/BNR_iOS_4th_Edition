@@ -28,12 +28,17 @@
     return self;
 }
 
+-(void) setCircleColor:(UIColor *)circleColor
+{
+    _circleColor = circleColor;
+    [self setNeedsDisplay];
+}
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    CGRect bounds = self.window.bounds;
+    CGRect bounds = self.bounds;
     //Desplazamiento del contenedor respecto del o,o de la pantalla
     //más la mitad del ancho del contener actual
     float x = bounds.origin.x + bounds.size.width / 2.0;
