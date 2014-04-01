@@ -10,6 +10,4 @@
 
 @interface BNRHypnosisViewController : UIViewController
 
--(void) loadView;
-
 @end

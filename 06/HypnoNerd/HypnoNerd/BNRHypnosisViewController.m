@@ -9,7 +9,21 @@
 #import "BNRHypnosisViewController.h"
 #import "BNRHypnosisView.h"
 
+@interface BNRHypnosisViewController()
+@end
+
 @implementation BNRHypnosisViewController
+
+-(instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if(self){
+        self.tabBarItem.title = @"Hypnotize me";
+        UIImage *i = [UIImage imageNamed:@"Hypno.png"];
+        self.tabBarItem.image = i;
+    }
+    return self;
+}
 
 -(void) loadView{
     
