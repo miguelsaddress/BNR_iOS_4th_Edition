@@ -19,11 +19,12 @@
     // Override point for customization after application launch.
     
     BNRHypnosisViewController *hvc = [[BNRHypnosisViewController alloc] init];
+    MAMQuizViewController *qvc = [[MAMQuizViewController alloc] init];
     BNRReminderViewController *rvc = [[BNRReminderViewController alloc] init];
 
     UITabBarController *tbc = [[UITabBarController alloc] init];
 
-    tbc.viewControllers = @[hvc, rvc];
+    tbc.viewControllers = @[hvc, rvc, qvc];
 
     self.window.rootViewController = tbc;
     
