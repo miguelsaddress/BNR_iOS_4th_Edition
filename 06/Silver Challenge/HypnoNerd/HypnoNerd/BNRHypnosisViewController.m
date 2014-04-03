@@ -11,6 +11,7 @@
 
 @interface BNRHypnosisViewController()
 @property(nonatomic, weak) BNRHypnosisView *backgroundView;
+@property(nonatomic, weak) UISegmentedControl *segmentedControl;
 @end
 
 @implementation BNRHypnosisViewController
@@ -28,7 +29,9 @@
 
 -(void) loadView{
     
-    BNRHypnosisView *hv = [[BNRHypnosisView alloc] init];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    BNRHypnosisView *hv = [[BNRHypnosisView alloc] initWithFrame:screenRect];
     self.view = hv;
     self.backgroundView = hv;
     [self addSegmentedControl];
@@ -39,19 +42,34 @@
 {
     NSArray *itemArray = @[@"Red", @"Green", @"Blue"];
     UISegmentedControl *sc = [[UISegmentedControl alloc] initWithItems:itemArray];
-    float x,y,width, height;
-    x = self.view.frame.origin.x;
-    y = self.view.frame.origin.y + 380;
-    width = 320;
-    height = 50;
-    sc.frame = CGRectMake(x, y, width, height);
-    sc.backgroundColor = [UIColor whiteColor];
-    [sc addTarget:self
-           action:@selector(pickOne:)
- forControlEvents:UIControlEventValueChanged];
+    self.segmentedControl = sc;
     
-    [self.view addSubview:sc];
+    [self setFrameToSegmentedControl];
+    self.segmentedControl.backgroundColor = [UIColor whiteColor];
+    [self.segmentedControl addTarget:self
+                              action:@selector(pickOne:)
+                    forControlEvents:UIControlEventValueChanged];
+    
+    [self.view addSubview:self.segmentedControl];
 
+}
+
+-(void) setFrameToSegmentedControl
+{
+    float x,y,width, height;
+    CGRect backGroundViewFrame = self.backgroundView.frame;
+    
+    x = backGroundViewFrame.origin.x;
+    y = backGroundViewFrame.origin.y + 30;
+    width = backGroundViewFrame.size.width;
+    height = 50;
+    self.segmentedControl.frame = CGRectMake(x, y, width, height);
+}
+
+-(void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self.backgroundView setNeedsDisplay];
+    [self setFrameToSegmentedControl];
 }
 
 -(void) pickOne:(id)sender{
@@ -69,8 +87,6 @@
     }
     
     self.backgroundView.circleColor = color;
-
-    [self addSegmentedControl];
 }
 
 @end

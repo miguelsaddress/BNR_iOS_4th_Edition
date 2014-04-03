@@ -23,7 +23,7 @@
         self.backgroundColor = [UIColor clearColor];
         self.circleColor = [UIColor lightGrayColor];
 
-    }
+    }    
     return self;
 }
 
